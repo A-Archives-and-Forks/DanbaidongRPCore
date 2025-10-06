@@ -920,11 +920,12 @@ namespace UnityEngine.Rendering.RenderGraphModule
             return new RendererListHandle(newHandle, RendererListHandleType.Legacy);
         }
 
-        internal BufferHandle ImportBuffer(GraphicsBuffer graphicsBuffer, bool forceRelease = false)
+        internal BufferHandle ImportBuffer(GraphicsBuffer graphicsBuffer, bool forceRelease = false, string bufferName = "GraphicsBuffer")
         {
             int newHandle = m_RenderGraphResources[(int)RenderGraphResourceType.Buffer].AddNewRenderGraphResource(out BufferResource bufferResource);
             bufferResource.graphicsResource = graphicsBuffer;
             bufferResource.imported = true;
+            bufferResource.importedBufferName = bufferName;
             bufferResource.forceRelease = forceRelease;
             bufferResource.validDesc = false;
 

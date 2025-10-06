@@ -140,10 +140,11 @@ namespace UnityEngine.Rendering.RenderGraphModule
     [DebuggerDisplay("BufferResource ({desc.name})")]
     class BufferResource : RenderGraphResource<BufferDesc, GraphicsBuffer>
     {
+        public string importedBufferName;
         public override string GetName()
         {
             if (imported)
-                return "ImportedGraphicsBuffer"; // No getter for graphics buffer name.
+                return importedBufferName; // No getter for graphics buffer name.
             else
                 return desc.name;
         }

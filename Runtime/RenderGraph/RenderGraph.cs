@@ -877,9 +877,9 @@ namespace UnityEngine.Rendering.RenderGraphModule
         /// <param name="graphicsBuffer">External Graphics Buffer that needs to be imported.</param>
         /// <param name="forceRelease">The imported graphics buffer will be released after usage.</param>
         /// <returns>A new GraphicsBufferHandle.</returns>
-        public BufferHandle ImportBuffer(GraphicsBuffer graphicsBuffer, bool forceRelease = false)
+        public BufferHandle ImportBuffer(GraphicsBuffer graphicsBuffer, bool forceRelease = false, string bufferName = "GraphicsBuffer")
         {
-            return m_Resources.ImportBuffer(graphicsBuffer, forceRelease);
+            return m_Resources.ImportBuffer(graphicsBuffer, forceRelease, bufferName);
         }
 
         /// <summary>
